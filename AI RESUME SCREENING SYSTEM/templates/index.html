@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Resume Screening</title>
+<link rel="stylesheet"
+href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>🤖 AI Resume Screening System</h1>
+
+<p>
+Upload Resume & Match With Job Description
+</p>
+
+<form action="/predict"
+method="POST"
+enctype="multipart/form-data">
+
+<textarea
+name="job_description"
+placeholder="Enter Job Description..."
+required></textarea>
+
+<input
+type="file"
+name="resume"
+accept=".pdf"
+required>
+
+<button type="submit">
+Analyze Resume
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>

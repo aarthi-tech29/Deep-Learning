@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>📊 Screening Result</h1>
+
+<h2>{{ result }}</h2>
+
+<div class="score">
+Skill Match Score
+<br>
+{{ score }}%
+</div>
+
+<a href="/" class="btn">
+Analyze Another Resume
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

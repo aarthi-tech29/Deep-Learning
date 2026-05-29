@@ -1,0 +1,97 @@
+{
+  "intents": [
+
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Good morning",
+        "Good evening"
+      ],
+      "responses": [
+        "Hello! How can I help you?",
+        "Hi there!",
+        "Welcome! Ask me anything."
+      ]
+    },
+
+    {
+      "tag": "about_company",
+      "patterns": [
+        "What is your company",
+        "Tell me about company",
+        "Who are you"
+      ],
+      "responses": [
+        "We are an AI-powered company.",
+        "Our company provides AI solutions."
+      ]
+    },
+
+    {
+      "tag": "courses",
+      "patterns": [
+        "What courses do you offer",
+        "Available courses",
+        "Course details"
+      ],
+      "responses": [
+        "We offer Python, Data Science, AI and Machine Learning courses."
+      ]
+    },
+
+    {
+      "tag": "fees",
+      "patterns": [
+        "What is the fee",
+        "Course fee",
+        "Fees structure"
+      ],
+      "responses": [
+        "Please contact our office for fee details."
+      ]
+    },
+
+    {
+      "tag": "contact",
+      "patterns": [
+        "Contact number",
+        "Phone number",
+        "How can I contact you"
+      ],
+      "responses": [
+        "You can contact us at +91-9876543210."
+      ]
+    },
+
+    {
+      "tag": "bye",
+      "patterns": [
+        "Bye",
+        "See you",
+        "Goodbye"
+      ],
+      "responses": [
+        "Goodbye!",
+        "Have a great day!"
+      ]
+    },
+    {
+  "tag": "how_are_you",
+  "patterns": [
+    "How are you",
+    "How are you doing",
+    "Are you fine",
+    "What's up"
+  ],
+  "responses": [
+    "I'm doing great! How can I help you?",
+    "I'm fine. Thanks for asking!",
+    "Doing well! What can I do for you?"
+  ]
+}
+
+  ]
+}

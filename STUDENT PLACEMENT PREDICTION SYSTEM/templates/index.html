@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Placement Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+        <h1>🎓 Student Placement Prediction</h1>
+        <p class="subtitle">Predict placement chances using AI & Neural Networks</p>
+
+        <form action="/predict" method="POST">
+
+            <div class="input-group">
+                <label>Aptitude Score</label>
+                <input type="number" name="aptitude" required>
+            </div>
+
+            <div class="input-group">
+                <label>Coding Score</label>
+                <input type="number" name="coding" required>
+            </div>
+
+            <div class="input-group">
+                <label>Communication Score</label>
+                <input type="number" name="communication" required>
+            </div>
+
+            <div class="input-group">
+                <label>CGPA</label>
+                <input type="number" step="0.1" name="cgpa" required>
+            </div>
+
+            <button type="submit">Predict Placement</button>
+
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

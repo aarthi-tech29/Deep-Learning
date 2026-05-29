@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>📊 Prediction Result</h1>
+
+        {% if result == "SPAM" %}
+            <div class="spam-box">
+                🚨 SPAM EMAIL
+            </div>
+        {% else %}
+            <div class="ham-box">
+                ✅ GENUINE EMAIL
+            </div>
+        {% endif %}
+
+        <h3>Email Content</h3>
+
+        <div class="email-box">
+            {{ email }}
+        </div>
+
+        <a href="/" class="btn">
+            Check Another Email
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

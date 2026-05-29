@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>📧 Email Spam Detection</h1>
+
+        <p class="subtitle">
+            Enter an email message and let AI detect whether it is Spam or Ham.
+        </p>
+
+        <form action="/predict" method="POST">
+
+            <textarea
+                name="email"
+                placeholder="Paste email content here..."
+                required></textarea>
+
+            <button type="submit">
+                🔍 Check Email
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

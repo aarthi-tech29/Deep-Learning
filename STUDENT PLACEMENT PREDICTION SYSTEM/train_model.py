@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import tensorflow as tf
+import joblib
 
 # Load dataset
 data = pd.read_csv("student_placement.csv")
@@ -12,6 +13,7 @@ y = data['placed']
 # Scaling
 scaler = StandardScaler()
 X = scaler.fit_transform(X)
+joblib.dump(scaler, "scaler.pkl")
 
 # Split
 X_train, X_test, y_train, y_test = train_test_split(

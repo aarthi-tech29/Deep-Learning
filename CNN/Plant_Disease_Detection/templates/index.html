@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🌿 Plant Disease Detection</h1>
+
+        <p class="subtitle">
+            Upload a plant leaf image and identify diseases using CNN
+        </p>
+
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+
+            <div class="upload-area">
+                <input type="file" name="image" required>
+            </div>
+
+            <button type="submit">
+                Detect Disease
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

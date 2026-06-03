@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vehicle Type Classification</title>
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>🚗 Vehicle Type Classification</h1>
+
+<p>
+Upload a vehicle image and identify its type
+</p>
+
+<form action="/predict"
+method="POST"
+enctype="multipart/form-data">
+
+<div class="upload-box">
+
+<input type="file"
+name="image"
+required>
+
+</div>
+
+<button type="submit">
+Classify Vehicle
+</button>
+
+</form>
+
+<br>
+
+<a href="/history"
+class="history-btn">
+View History
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

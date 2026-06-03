@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🔍 Prediction Result</h1>
+
+        <img src="{{ image_path }}" class="vehicle-img">
+
+        <div class="result-box">
+
+            <h2>{{ prediction }}</h2>
+
+            <h3 class="confidence">
+                Confidence: {{ confidence }}%
+            </h3>
+
+        </div>
+
+        <a href="/" class="history-btn">
+            Try Another Image
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Mask Detection</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>😷 Face Mask Detection System</h1>
+
+        <p>
+            Upload a face image to check whether a mask is worn
+        </p>
+
+        <form action="/predict"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <div class="upload-box">
+                <input type="file"
+                       name="image"
+                       required>
+            </div>
+
+            <button type="submit">
+                Detect Mask
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

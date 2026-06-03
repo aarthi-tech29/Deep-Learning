@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediction Result</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -13,7 +16,9 @@
 
         <h1>🔍 Prediction Result</h1>
 
-        <img src="{{ image_path }}" class="leaf-image">
+        <img src="{{ image_path }}"
+             alt="Leaf Image"
+             class="leaf-image">
 
         <div class="result-box">
 
@@ -23,20 +28,28 @@
                 Confidence Score: {{ confidence }}%
             </p>
 
-            <div class="progress">
-                <div class="progress-bar" style="width: {{ confidence }}%"></div>
-            </div>
-
             <br>
 
             {% if prediction == "Healthy" %}
+
                 <h3 class="healthy">
                     🌱 Healthy Leaf
                 </h3>
+
+                <p>
+                    The uploaded leaf appears healthy and shows no visible disease symptoms.
+                </p>
+
             {% else %}
+
                 <h3 class="disease">
                     ⚠️ Disease Detected
                 </h3>
+
+                <p>
+                    The uploaded leaf is affected by a plant disease.
+                </p>
+
             {% endif %}
 
         </div>

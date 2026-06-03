@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Medical X-Ray Classification</title>
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>🩺 Medical X-Ray Classification</h1>
+
+<p>
+Upload a Chest X-Ray Image
+</p>
+
+<form action="/predict"
+method="POST"
+enctype="multipart/form-data">
+
+<div class="upload-box">
+<input type="file"
+name="image"
+required>
+</div>
+
+<button type="submit">
+Analyze X-Ray
+</button>
+
+</form>
+
+<br>
+
+<a href="/dashboard"
+class="dashboard-btn">
+Doctor Dashboard
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#4b79a1,
+#283e51
+);
+}
+
+.container{
+width:100%;
+padding:20px;
+display:flex;
+justify-content:center;
+}
+
+.card{
+width:850px;
+
+background:white;
+
+padding:40px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1{
+color:#1f3a5f;
+margin-bottom:20px;
+}
+
+.upload-box{
+border:3px dashed #4b79a1;
+padding:30px;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+button,
+.dashboard-btn{
+background:#1f3a5f;
+color:white;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:10px;
+
+text-decoration:none;
+
+cursor:pointer;
+}
+
+.result-box{
+background:#f5f5f5;
+padding:20px;
+border-radius:15px;
+margin-top:20px;
+}
+
+.xray-img{
+width:350px;
+max-width:100%;
+border-radius:15px;
+margin:20px 0;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+}
+
+th{
+background:#4b79a1;
+color:white;
+}
+.dashboard-btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#1f3a5f;
+    color:white;
+    padding:12px 25px;
+    border-radius:10px;
+    text-decoration:none;
+}

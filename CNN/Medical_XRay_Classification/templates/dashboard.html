@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Doctor Dashboard</title>
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>👨‍⚕️ Doctor Dashboard</h1>
+
+<table>
+
+<tr>
+<th>X-Ray</th>
+<th>Result</th>
+<th>Probability</th>
+</tr>
+
+{% for row in records %}
+
+<tr>
+
+<td>
+<img src="/{{ row[0] }}"
+width="120">
+</td>
+
+<td>{{ row[1] }}</td>
+
+<td>{{ row[2] }}%</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+<br><br>
+
+<a href="/" class="dashboard-btn">
+    🏠 Back to Home
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

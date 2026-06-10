@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Face Attendance System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🎓 Face Attendance System</h1>
+
+        <p class="subtitle">
+            AI Powered Attendance Monitoring
+        </p>
+
+        <img
+            src="{{ url_for('video') }}"
+            class="camera-feed"
+        >
+
+        <div class="footer">
+            Powered by Flask & OpenCV
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

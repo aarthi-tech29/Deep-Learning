@@ -89,3 +89,8 @@ if __name__ == "__main__":
     app.run(
         debug=True
     )
+
+# i love artificial
+# python libraries simplify
+# deep learning uses multiple
+# artificial intelligence is

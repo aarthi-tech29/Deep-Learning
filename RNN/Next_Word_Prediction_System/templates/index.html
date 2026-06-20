@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        Next Word Prediction
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static',filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>
+                🧠 Next Word Prediction
+            </h1>
+
+            <p class="subtitle">
+                Predict the next word using LSTM Deep Learning
+            </p>
+
+            <textarea
+                id="text"
+                placeholder="Type something... Example: I love artificial"
+            ></textarea>
+
+            <button onclick="predictWord()">
+                Predict Next Word
+            </button>
+
+           <div id="result" class="result">
+    Next Word Appears Here
+</div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static',filename='script.js') }}"></script>
+
+</body>
+
+</html>

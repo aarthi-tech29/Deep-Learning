@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Chatbot Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="chat-container">
+
+    <div class="chat-header">
+        <div class="logo">🤖</div>
+        <div>
+            <h2>AI Assistant</h2>
+            <span>Online</span>
+        </div>
+    </div>
+
+    <div id="chat-box" class="chat-box">
+
+        <div class="bot-message">
+            Hello! 👋 Welcome to AI Assistant.<br>
+            How can I help you today?
+        </div>
+
+    </div>
+
+    <div class="chat-input">
+
+        <input
+            type="text"
+            id="user-input"
+            placeholder="Type your message..."
+            onkeypress="handleKey(event)"
+        >
+
+        <button onclick="sendMessage()">
+            Send
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function handleKey(event){
+    if(event.key === "Enter"){
+        sendMessage();
+    }
+}
+
+function sendMessage(){
+
+    let input = document.getElementById("user-input");
+    let message = input.value.trim();
+
+    if(message === "") return;
+
+    let chatBox = document.getElementById("chat-box");
+
+    chatBox.innerHTML += `
+    <div class="user-message">
+        ${message}
+    </div>
+    `;
+
+    fetch("/get",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/x-www-form-urlencoded"
+        },
+        body:"msg="+encodeURIComponent(message)
+    })
+    .then(response=>response.json())
+    .then(data=>{
+
+        chatBox.innerHTML += `
+        <div class="bot-message">
+            ${data.response}
+        </div>
+        `;
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+    });
+
+    input.value="";
+}
+
+</script>
+
+</body>
+</html>

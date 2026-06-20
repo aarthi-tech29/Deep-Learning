@@ -1,0 +1,169 @@
+{
+  "intents": [
+
+    {
+      "tag": "greeting",
+      "patterns": ["Hi","Hello","Hey","Good Morning","Good Evening","How are you"],
+      "responses": ["Hello! How can I help you?","Hi there!","Welcome!"]
+    },
+
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye","Goodbye","See you later","Take care","Catch you later"],
+      "responses": ["Goodbye!","See you again!","Have a nice day!"]
+    },
+
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks","Thank you","Thanks a lot","I appreciate it"],
+      "responses": ["You're welcome!","Happy to help!"]
+    },
+
+    {
+      "tag": "name",
+      "patterns": ["What is your name","Who are you","Tell me your name"],
+      "responses": ["I am an AI Chatbot.","My name is ChatBot."]
+    },
+
+    {
+      "tag": "age",
+      "patterns": ["How old are you","What is your age","Age"],
+      "responses": ["I don't have an age.","I am a virtual assistant."]
+    },
+
+    {
+      "tag": "help",
+      "patterns": ["Help","Can you help me","Need assistance"],
+      "responses": ["Sure, tell me your problem.","I'm here to help."]
+    },
+
+    {
+      "tag": "python",
+      "patterns": ["What is Python","Explain Python","Python language"],
+      "responses": ["Python is a popular programming language."]
+    },
+
+    {
+      "tag": "java",
+      "patterns": ["What is Java","Explain Java","Java language"],
+      "responses": ["Java is an object-oriented programming language."]
+    },
+
+    {
+      "tag": "ai",
+      "patterns": ["What is AI","Explain Artificial Intelligence","Define AI"],
+      "responses": ["AI enables machines to mimic human intelligence."]
+    },
+
+    {
+      "tag": "ml",
+      "patterns": ["What is Machine Learning","Explain ML","Define machine learning"],
+      "responses": ["Machine Learning allows systems to learn from data."]
+    },
+
+    {
+      "tag": "dl",
+      "patterns": ["What is Deep Learning","Explain Deep Learning"],
+      "responses": ["Deep Learning is a subset of Machine Learning."]
+    },
+
+    {
+      "tag": "nlp",
+      "patterns": ["What is NLP","Explain NLP","Natural Language Processing"],
+      "responses": ["NLP helps computers understand human language."]
+    },
+
+    {
+      "tag": "tensorflow",
+      "patterns": ["What is TensorFlow","Explain TensorFlow"],
+      "responses": ["TensorFlow is an open-source deep learning framework."]
+    },
+
+    {
+      "tag": "keras",
+      "patterns": ["What is Keras","Explain Keras"],
+      "responses": ["Keras is a high-level neural network API."]
+    },
+
+    {
+      "tag": "flask",
+      "patterns": ["What is Flask","Explain Flask"],
+      "responses": ["Flask is a lightweight Python web framework."]
+    },
+
+    {
+      "tag": "django",
+      "patterns": ["What is Django","Explain Django"],
+      "responses": ["Django is a powerful Python web framework."]
+    },
+
+    {
+      "tag": "weather",
+      "patterns": ["How is the weather","Weather today","Is it raining"],
+      "responses": ["I cannot access live weather data currently."]
+    },
+
+    {
+      "tag": "time",
+      "patterns": ["What time is it","Tell me the time","Current time"],
+      "responses": ["Please check your device clock for accurate time."]
+    },
+
+    {
+      "tag": "date",
+      "patterns": ["Today's date","What date is today"],
+      "responses": ["Please check your device calendar."]
+    },
+
+    {
+      "tag": "joke",
+      "patterns": ["Tell me a joke","Make me laugh"],
+      "responses": [
+        "Why do programmers prefer dark mode? Because light attracts bugs!"
+      ]
+    },
+
+    {
+      "tag": "movie",
+      "patterns": ["Recommend a movie","Movie suggestion"],
+      "responses": [
+        "You can watch Interstellar, Inception or The Martian."
+      ]
+    },
+
+    {
+      "tag": "book",
+      "patterns": ["Recommend a book","Book suggestion"],
+      "responses": [
+        "Atomic Habits and The Alchemist are excellent books."
+      ]
+    },
+
+    {
+      "tag": "music",
+      "patterns": ["Do you like music","Music recommendation"],
+      "responses": [
+        "Music is a great way to relax and stay motivated."
+      ]
+    },
+
+    {
+      "tag": "capital_india",
+      "patterns": [
+        "What is the capital of India",
+        "Capital city of India"
+      ],
+      "responses": ["New Delhi is the capital of India."]
+    },
+
+    {
+      "tag": "largest_planet",
+      "patterns": [
+        "Largest planet",
+        "What is the largest planet"
+      ],
+      "responses": ["Jupiter is the largest planet in our solar system."]
+    }
+
+  ]
+}

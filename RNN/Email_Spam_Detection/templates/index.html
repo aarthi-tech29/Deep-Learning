@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Email Spam Detection
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>
+                📧 Email Spam Detector
+            </h1>
+
+            <p class="subtitle">
+                NLP Based Spam Detection System
+            </p>
+
+            <textarea
+                id="emailInput"
+                placeholder="Paste your email content here..."
+            ></textarea>
+
+            <button
+                onclick="detectSpam()"
+            >
+                Detect Email
+            </button>
+
+            <div
+                id="result"
+                class="result"
+            >
+                Result Appears Here
+            </div>
+
+            <div
+                id="tags"
+                class="tags"
+            >
+            </div>
+
+        </div>
+
+    </div>
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
+
+</html>

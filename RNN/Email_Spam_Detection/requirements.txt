@@ -1,0 +1,6 @@
+Python
+Flask
+NLTK
+Scikit-Learn
+TF-IDF
+Naive Bayes

@@ -1,0 +1,311 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+/* =======================
+   BACKGROUND
+======================= */
+
+body{
+
+    background:
+    linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #334155
+    );
+
+    color:white;
+}
+
+/* =======================
+   DASHBOARD
+======================= */
+
+.dashboard{
+
+    display:flex;
+
+    width:100vw;
+    height:100vh;
+}
+
+/* =======================
+   SIDEBAR
+======================= */
+
+.sidebar{
+
+    width:260px;
+
+    background:
+    rgba(255,255,255,0.08);
+
+    backdrop-filter:
+    blur(15px);
+
+    border-right:
+    1px solid rgba(255,255,255,0.1);
+
+    padding:40px 25px;
+}
+
+.sidebar h2{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.sidebar p{
+
+    color:#cbd5e1;
+
+    font-size:14px;
+}
+
+/* =======================
+   MAIN CONTENT
+======================= */
+
+.main-content{
+
+    flex:1;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+    height:100vh;
+
+    overflow:hidden;
+}
+
+/* =======================
+   HEADER
+======================= */
+
+.header h1{
+
+    font-size:38px;
+
+    margin-bottom:8px;
+}
+
+.header p{
+
+    color:#cbd5e1;
+}
+
+/* =======================
+   SEARCH BOX
+======================= */
+
+.search-box{
+
+    display:flex;
+
+    gap:15px;
+}
+
+.search-box input{
+
+    flex:1;
+
+    height:55px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    padding:0 20px;
+
+    font-size:16px;
+
+    background:white;
+
+    color:#1e293b;
+}
+
+.search-box button{
+
+    width:180px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    background:
+    linear-gradient(
+    135deg,
+    #4f46e5,
+    #7c3aed
+    );
+
+    transition:0.3s;
+}
+
+.search-box button:hover{
+
+    transform:translateY(-2px);
+}
+
+/* =======================
+   KPI CARDS
+======================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.card{
+
+    background:
+    rgba(255,255,255,0.08);
+
+    backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,0.1);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card h3{
+
+    color:#cbd5e1;
+
+    font-size:15px;
+
+    margin-bottom:10px;
+}
+
+.card p{
+
+    font-size:30px;
+
+    font-weight:700;
+}
+
+/* =======================
+   CHART
+======================= */
+
+.chart-container{
+
+    /* flex:1; */
+
+    background:
+    rgba(255,255,255,0.08);
+
+    backdrop-filter:
+    blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,0.1);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    /* min-height:450px; */
+
+
+    flex:1;
+
+    min-height:0;
+
+    height:350px;
+
+    overflow:hidden;
+
+}
+
+.chart-container canvas{
+
+    width:100% !important;
+    height:100% !important;
+}
+
+/* =======================
+   MOBILE
+======================= */
+
+@media(max-width:900px){
+
+    .dashboard{
+
+        flex-direction:column;
+    }
+
+    .sidebar{
+
+        width:100%;
+        height:auto;
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+    }
+
+    .search-box{
+
+        flex-direction:column;
+    }
+
+    .search-box button{
+
+        width:100%;
+        height:55px;
+    }
+}
+
+.dashboard{
+    height:100vh;
+    overflow:hidden;
+}
+
+.chart-container{
+    height:40vh;
+}
+
+.cards{
+    margin-bottom:10px;
+}

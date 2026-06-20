@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+AI Stock Prediction System
+</title>
+
+<link
+rel="stylesheet"
+href="{{ url_for('static',
+filename='style.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>
+            📈 Stock AI
+        </h2>
+
+        <p>
+            LSTM Prediction System
+        </p>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <h1>
+                Stock Price Prediction
+            </h1>
+
+            <p>
+                Predict future stock prices
+                using Deep Learning
+            </p>
+
+        </div>
+
+        <!-- Search -->
+
+        <div class="search-box">
+
+            <input
+            type="text"
+            id="symbol"
+            placeholder="Enter Symbol (AAPL, TSLA, MSFT...)">
+
+            <button
+            id="predictBtn">
+
+                Predict
+
+            </button>
+
+        </div>
+
+        <!-- KPI CARDS -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>
+                    Current Price
+                </h3>
+
+                <p id="currentPrice">
+                    --
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    Predicted Price
+                </h3>
+
+                <p id="predictedPrice">
+                    --
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    Market Trend
+                </h3>
+
+                <p id="trend">
+                    --
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Graph -->
+
+        <div class="chart-container">
+
+            <canvas
+            id="stockChart">
+            </canvas>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script
+src="{{ url_for('static',
+filename='chart.js') }}">
+</script>
+
+</body>
+
+</html>

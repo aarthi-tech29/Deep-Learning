@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+AI Sentiment Analysis
+</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="glass-card">
+
+<h1>
+😊 Sentiment Analysis System
+</h1>
+
+<p>
+Analyze customer reviews using
+Deep Learning & LSTM
+</p>
+
+<textarea
+id="review"
+placeholder="Enter customer review here...">
+</textarea>
+
+<button id="analyzeBtn">
+
+Analyze Sentiment
+
+</button>
+
+<div id="result">
+
+Waiting for review...
+
+</div>
+
+</div>
+
+</div>
+
+<script
+src="{{ url_for('static',
+filename='script.js') }}">
+</script>
+
+</body>
+
+</html>

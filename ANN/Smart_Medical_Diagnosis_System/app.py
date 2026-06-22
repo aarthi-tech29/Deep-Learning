@@ -519,3 +519,15 @@ if __name__ == "__main__":
 # Heart Rate     : 130
 # Oxygen Level   : 85
 # Symptoms       : Chest Pain
+
+# Patient Medical Report
+
+# Name : John
+# Blood Pressure : 150
+# Sugar Level : 220
+# Heart Rate : 95
+# Oxygen Level : 97
+
+# Disease : Diabetes
+# Risk : High Risk
+# Probability : 89%

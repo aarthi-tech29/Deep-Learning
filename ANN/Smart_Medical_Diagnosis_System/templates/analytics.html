@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Doctor Analytics</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <a href="/dashboard" class="dashboard-btn">
+        🏠 Dashboard
+    </a>
+
+    <div class="analytics-page">
+
+        <h1>📊 Doctor Analytics Dashboard</h1>
+
+        <div class="analytics-wrapper">
+
+            <!-- BAR CHART -->
+
+            <div class="chart-box">
+
+                <canvas id="barChart"></canvas>
+
+            </div>
+
+            <!-- PIE CHART -->
+
+            <div class="chart-box">
+
+                <canvas id="pieChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script>
+
+const healthyCases = {{ healthy_cases }};
+const diabetesCases = {{ diabetes_cases }};
+const heartCases = {{ heart_cases }};
+
+
+// ================= BAR CHART =================
+
+const barCtx = document.getElementById("barChart");
+
+new Chart(barCtx, {
+
+    type: "bar",
+
+    data: {
+
+        labels: [
+            "Healthy",
+            "Diabetes",
+            "Heart Disease"
+        ],
+
+        datasets: [{
+
+            label: "Patient Count",
+
+            data: [
+                healthyCases,
+                diabetesCases,
+                heartCases
+            ],
+
+            backgroundColor: [
+                "#22c55e",
+                "#f59e0b",
+                "#ef4444"
+            ],
+
+            borderRadius: 10
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false,
+
+        plugins: {
+
+            title: {
+
+                display: true,
+
+                text: "Disease Distribution",
+
+                font: {
+                    size: 20
+                }
+            },
+
+            legend: {
+                display: false
+            }
+        },
+
+        scales: {
+
+            y: {
+
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+
+// ================= PIE CHART =================
+
+const pieCtx = document.getElementById("pieChart");
+
+new Chart(pieCtx, {
+
+    type: "pie",
+
+    data: {
+
+        labels: [
+            "Healthy",
+            "Diabetes",
+            "Heart Disease"
+        ],
+
+        datasets: [{
+
+            data: [
+                healthyCases,
+                diabetesCases,
+                heartCases
+            ],
+
+            backgroundColor: [
+                "#22c55e",
+                "#f59e0b",
+                "#ef4444"
+            ],
+
+            borderColor: "#ffffff",
+
+            borderWidth: 2
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false,
+
+        plugins: {
+
+            title: {
+
+                display: true,
+
+                text: "Disease Percentage",
+
+                font: {
+                    size: 20
+                }
+            },
+
+            legend: {
+
+                position: "top"
+            }
+        }
+    }
+});
+
+</script>
+
+</body>
+
+</html>

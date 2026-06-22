@@ -1,0 +1,103 @@
+BloodPressure,SugarLevel,HeartRate,OxygenLevel,Symptoms,Disease
+120,90,72,98,None,Healthy
+145,180,90,95,Frequent Urination,Diabetes
+160,110,105,94,Chest Pain,Heart Disease
+130,200,88,96,Frequent Urination,Diabetes
+170,120,115,92,Chest Pain,Heart Disease
+118,85,70,99,None,Healthy
+155,190,95,95,Frequent Urination,Diabetes
+165,130,110,93,Chest Pain,Heart Disease
+125,95,75,98,Cough,Healthy
+150,185,92,94,Frequent Urination,Diabetes
+122,88,73,99,None,Healthy
+148,175,89,95,Frequent Urination,Diabetes
+162,118,108,93,Chest Pain,Heart Disease
+127,92,74,98,Cough,Healthy
+152,195,96,94,Frequent Urination,Diabetes
+168,125,112,92,Chest Pain,Heart Disease
+119,86,71,99,None,Healthy
+146,178,91,95,Frequent Urination,Diabetes
+161,115,107,94,Chest Pain,Heart Disease
+124,93,76,98,Fever,Healthy
+121,89,72,98,None,Healthy
+149,182,93,95,Frequent Urination,Diabetes
+163,122,109,93,Chest Pain,Heart Disease
+126,94,75,98,Cough,Healthy
+151,188,94,94,Frequent Urination,Diabetes
+169,128,113,92,Chest Pain,Heart Disease
+117,84,69,99,None,Healthy
+144,176,88,95,Frequent Urination,Diabetes
+159,114,104,94,Chest Pain,Heart Disease
+123,91,74,98,Fever,Healthy
+120,87,72,98,None,Healthy
+147,181,92,95,Frequent Urination,Diabetes
+164,126,111,93,Chest Pain,Heart Disease
+128,96,77,98,Cough,Healthy
+153,192,97,94,Frequent Urination,Diabetes
+171,132,116,91,Chest Pain,Heart Disease
+118,83,70,99,None,Healthy
+143,174,87,95,Frequent Urination,Diabetes
+158,113,103,94,Chest Pain,Heart Disease
+124,90,75,98,Fever,Healthy
+119,88,71,99,None,Healthy
+150,184,93,95,Frequent Urination,Diabetes
+166,129,112,92,Chest Pain,Heart Disease
+127,97,78,98,Cough,Healthy
+154,196,98,94,Frequent Urination,Diabetes
+172,134,117,91,Chest Pain,Heart Disease
+116,82,68,99,None,Healthy
+142,173,86,95,Frequent Urination,Diabetes
+157,112,102,94,Chest Pain,Heart Disease
+123,89,74,98,Fever,Healthy
+121,90,73,98,None,Healthy
+148,179,90,95,Frequent Urination,Diabetes
+160,120,106,93,Chest Pain,Heart Disease
+126,95,76,98,Cough,Healthy
+151,187,95,94,Frequent Urination,Diabetes
+169,131,114,92,Chest Pain,Heart Disease
+118,86,70,99,None,Healthy
+145,177,89,95,Frequent Urination,Diabetes
+158,116,104,94,Chest Pain,Heart Disease
+124,92,75,98,Fever,Healthy
+122,91,74,98,None,Healthy
+149,183,91,95,Frequent Urination,Diabetes
+161,121,107,93,Chest Pain,Heart Disease
+127,96,77,98,Cough,Healthy
+152,189,96,94,Frequent Urination,Diabetes
+170,133,115,91,Chest Pain,Heart Disease
+117,85,69,99,None,Healthy
+144,175,88,95,Frequent Urination,Diabetes
+159,117,105,94,Chest Pain,Heart Disease
+123,90,74,98,Fever,Healthy
+120,88,72,98,None,Healthy
+147,180,90,95,Frequent Urination,Diabetes
+162,123,108,93,Chest Pain,Heart Disease
+126,94,76,98,Cough,Healthy
+153,191,97,94,Frequent Urination,Diabetes
+171,135,116,91,Chest Pain,Heart Disease
+116,83,68,99,None,Healthy
+143,172,87,95,Frequent Urination,Diabetes
+157,111,103,94,Chest Pain,Heart Disease
+122,89,73,98,Fever,Healthy
+121,87,72,98,None,Healthy
+148,186,92,95,Frequent Urination,Diabetes
+163,124,109,93,Chest Pain,Heart Disease
+128,95,78,98,Cough,Healthy
+154,194,98,94,Frequent Urination,Diabetes
+172,136,117,91,Chest Pain,Heart Disease
+118,84,70,99,None,Healthy
+145,178,89,95,Frequent Urination,Diabetes
+160,118,106,93,Chest Pain,Heart Disease
+125,91,75,98,Fever,Healthy
+120,89,72,98,None,Healthy
+149,185,92,95,Frequent Urination,Diabetes
+164,127,110,93,Chest Pain,Heart Disease
+127,94,77,98,Cough,Healthy
+155,197,99,94,Frequent Urination,Diabetes
+173,138,118,91,Chest Pain,Heart Disease
+119,85,71,99,None,Healthy
+120,90,72,99,None,Healthy
+118,92,75,98,None,Healthy
+115,88,70,99,None,Healthy
+122,95,74,98,None,Healthy
+119,93,71,99,None,Healthy

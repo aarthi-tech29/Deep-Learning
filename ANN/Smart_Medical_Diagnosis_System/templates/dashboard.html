@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Medical Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>🏥 Medical AI</h2>
+
+        <a href="/dashboard">📊 Dashboard</a>
+        <a href="/upload">📂 Upload Dataset</a>
+        <a href="/train">🧠 Train Model</a>
+        <a href="/prediction">🩺 Disease Prediction</a>
+        <a href="/analytics">📈 Doctor Analytics</a>
+        <a href="/report">📄 Medical Report</a>
+        <a href="/logout">🚪 Logout</a>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Patients</h3>
+                <h1>{{ total_patients }}</h1>
+            </div>
+
+            <div class="card">
+                <h3>Diabetes Cases</h3>
+                <h1>{{ diabetes_cases }}</h1>
+            </div>
+
+            <div class="card">
+                <h3>Heart Disease</h3>
+                <h1>{{ heart_cases }}</h1>
+            </div>
+
+            <div class="card">
+                <h3>Model Accuracy</h3>
+                <h1>{{ model_accuracy }}%</h1>
+            </div>
+
+        </div>
+
+        <!-- Pie Chart -->
+
+        <div class="dashboard-chart">
+
+            <h2>Disease Distribution</h2>
+
+            <canvas id="diseaseChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <!-- Chart JS CDN -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+
+        const ctx = document.getElementById("diseaseChart");
+
+        new Chart(ctx, {
+
+            type: "doughnut",
+
+            data: {
+
+                labels: [
+                    "Healthy",
+                    "Diabetes",
+                    "Heart Disease"
+                ],
+
+                datasets: [{
+                    data: [
+                        {{ total_patients - diabetes_cases - heart_cases }},
+                        {{ diabetes_cases }},
+                        {{ heart_cases }}
+                    ],
+
+                    backgroundColor: [
+                        "#22c55e",
+                        "#f59e0b",
+                        "#ef4444"
+                    ],
+
+                    borderWidth: 2
+                }]
+            },
+
+            options: {
+
+                responsive: true,
+                maintainAspectRatio: false,
+
+                plugins: {
+
+                    legend: {
+                        position: "top"
+                    }
+                },
+
+                cutout: "65%"
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

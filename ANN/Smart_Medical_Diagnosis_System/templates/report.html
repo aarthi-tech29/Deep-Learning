@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Medical Report</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="report-container">
+
+    <a href="/dashboard" class="dashboard-btn">
+        🏠 Dashboard
+    </a>
+
+    <h1>📄 Medical Report Generation</h1>
+
+    <form action="/generate_report" method="POST">
+
+        <input
+            type="text"
+            name="patient_name"
+            placeholder="Patient Name"
+            required>
+
+        <input
+            type="number"
+            name="bp"
+            placeholder="Blood Pressure"
+            required>
+
+        <input
+            type="number"
+            name="sugar"
+            placeholder="Sugar Level"
+            required>
+
+        <input
+            type="number"
+            name="heart"
+            placeholder="Heart Rate"
+            required>
+
+        <input
+            type="number"
+            name="oxygen"
+            placeholder="Oxygen Level"
+            required>
+
+        <select name="symptom">
+
+            <option>Fever</option>
+            <option>Chest Pain</option>
+            <option>Cough</option>
+            <option>Frequent Urination</option>
+            <option>None</option>
+
+        </select>
+
+        <button type="submit">
+            Generate Report
+        </button>
+
+    </form>
+
+    {% if patient_name %}
+
+    <div class="result-box">
+
+        <h2>🏥 Patient Medical Report</h2>
+
+        <p><strong>Patient Name :</strong> {{ patient_name }}</p>
+
+        <p><strong>Blood Pressure :</strong> {{ bp }}</p>
+
+        <p><strong>Sugar Level :</strong> {{ sugar }}</p>
+
+        <p><strong>Heart Rate :</strong> {{ heart }}</p>
+
+        <p><strong>Oxygen Level :</strong> {{ oxygen }}</p>
+
+        <hr style="margin:15px 0;">
+
+        <p><strong>Disease :</strong> {{ disease }}</p>
+
+        <p><strong>Risk Analysis :</strong> {{ risk }}</p>
+
+        <p><strong>Probability :</strong> {{ probability }} %</p>
+
+        <br>
+
+        <a href="/download_report/{{ pdf_file }}"
+           class="dashboard-btn">
+
+            📥 Download PDF Report
+
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>

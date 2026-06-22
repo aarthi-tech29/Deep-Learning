@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Disease Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="prediction-container">
+
+        <a href="/dashboard" class="dashboard-btn">
+            🏠 Dashboard
+        </a>
+
+        <div class="prediction-form">
+
+            <h1>🩺 Disease Prediction</h1>
+
+            <form action="/predict_disease" method="POST">
+
+                <input
+                    type="number"
+                    name="bp"
+                    placeholder="Blood Pressure"
+                    required>
+
+                <input
+                    type="number"
+                    name="sugar"
+                    placeholder="Sugar Level"
+                    required>
+
+                <input
+                    type="number"
+                    name="heart"
+                    placeholder="Heart Rate"
+                    required>
+
+                <input
+                    type="number"
+                    name="oxygen"
+                    placeholder="Oxygen Level"
+                    required>
+
+                <select name="symptom" required>
+
+                    <option value="Fever">Fever</option>
+
+                    <option value="Chest Pain">Chest Pain</option>
+
+                    <option value="Cough">Cough</option>
+
+                    <option value="Frequent Urination">
+                        Frequent Urination
+                    </option>
+
+                    <option value="None">None</option>
+
+                </select>
+
+                <button type="submit">
+                    Predict Disease
+                </button>
+
+            </form>
+
+            {% if result %}
+
+            <div class="result-box">
+
+                <h2>{{ result }}</h2>
+
+                <h3>
+                    Probability : {{ probability }} %
+                </h3>
+
+                <h3 style="color:red;">Risk Level : {{ risk }}</h3>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

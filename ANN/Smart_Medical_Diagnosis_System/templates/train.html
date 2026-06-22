@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Train ANN Model</title>
+
+<link rel="stylesheet"
+href="{{url_for('static',filename='css/style.css')}}">
+
+</head>
+
+<body>
+
+<a href="/dashboard" class="dashboard-btn">
+🏠 Dashboard
+</a>
+
+<div class="form-container">
+
+<h1>🧠 Train Disease Prediction Model</h1>
+
+<form
+action="/train_model"
+method="POST">
+
+<button type="submit">
+
+🚀 Train Model
+
+</button>
+
+</form>
+
+{% if model_saved %}
+
+<div class="success-box">
+
+<h2>✅ Model Trained Successfully</h2>
+
+<p>disease_model.h5 Created</p>
+
+<p>scaler.pkl Created</p>
+
+<p>label_encoder.pkl Created</p>
+
+<h3>
+
+Accuracy :
+{{accuracy}} %
+
+</h3>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>

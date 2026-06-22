@@ -1,0 +1,9 @@
+flask
+pandas
+numpy
+tensorflow
+keras
+scikit-learn
+mysql-connector-python
+joblib
+reportlab

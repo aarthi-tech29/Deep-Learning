@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+<title>HR Analytics Dashboard</title>
+
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+<body>
+<a href="/dashboard" class="dashboard-btn">
+    🏠 Back to Dashboard
+</a>
+
+<div class="analytics-page">
+
+<h1>📊 HR Analytics Dashboard</h1>
+
+<div class="chart-box">
+
+    <canvas id="departmentChart"></canvas>
+
+</div>
+
+<div class="chart-box">
+
+    <canvas id="performanceChart"></canvas>
+
+</div>
+```
+
+</div>
+
+<script>
+
+const deptCtx =
+document.getElementById(
+'departmentChart'
+);
+
+new Chart(deptCtx, {
+
+    type: 'bar',
+
+    data: {
+
+        labels: [
+            'IT',
+            'HR',
+            'Sales',
+            'Finance'
+        ],
+
+        datasets: [{
+
+            label: 'Attrition',
+
+            data: [15, 8, 12, 5],
+
+            backgroundColor: [
+                '#3B82F6',
+                '#EF4444',
+                '#10B981',
+                '#F59E0B'
+            ],
+
+            borderColor: [
+                '#2563EB',
+                '#DC2626',
+                '#059669',
+                '#D97706'
+            ],
+
+            borderWidth: 2
+
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false,
+
+        plugins: {
+
+            legend: {
+                display: false
+            },
+
+            title: {
+
+                display: true,
+
+                text: 'Department Wise Attrition',
+
+                font: {
+                    size: 18
+                }
+            }
+        }
+    }
+
+});
+
+const perfCtx =
+document.getElementById(
+'performanceChart'
+);
+
+new Chart(perfCtx, {
+
+    type: 'pie',
+
+    data: {
+
+        labels: [
+            'High Performance',
+            'Average Performance',
+            'Low Performance'
+        ],
+
+        datasets: [{
+
+            data: [45, 35, 20],
+
+            backgroundColor: [
+                '#22C55E',
+                '#F59E0B',
+                '#EF4444'
+            ]
+
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false,
+
+        plugins: {
+
+            title: {
+
+                display: true,
+
+                text: 'Employee Performance Distribution',
+
+                font: {
+                    size: 18
+                }
+            }
+        }
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

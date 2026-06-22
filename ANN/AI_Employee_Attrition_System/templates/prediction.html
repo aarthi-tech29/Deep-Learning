@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Prediction</title>
+
+
+<link rel="stylesheet"
+href="{{url_for('static',filename='css/style.css')}}">
+
+</head>
+
+<body>
+<a href="/dashboard" class="dashboard-btn">
+    🏠 Back to Dashboard
+</a>
+
+<div class="prediction-form">
+
+<h1>Employee Attrition Prediction</h1>
+
+<form action="/predict_employee"
+method="POST">
+
+<input type="number"
+name="age"
+placeholder="Age"
+required>
+
+<input type="number"
+name="income"
+placeholder="Monthly Income"
+required>
+
+<input type="number"
+name="satisfaction"
+placeholder="Job Satisfaction"
+required>
+
+<input type="number"
+name="years"
+placeholder="Years At Company"
+required>
+
+<input type="number"
+name="performance"
+placeholder="Performance Rating"
+required>
+
+<select name="department">
+
+<option>Sales</option>
+<option>IT</option>
+<option>HR</option>
+<option>Finance</option>
+
+</select>
+
+<button type="submit">
+
+Predict
+
+</button>
+
+</form>
+
+{% if result %}
+
+<div class="result-box">
+
+<h2>{{result}}</h2>
+
+<h3>
+Probability : {{probability}} %
+</h3>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>

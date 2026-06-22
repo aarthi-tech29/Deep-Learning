@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Dashboard</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>HR Dashboard</h2>
+
+        <a href="/dashboard">📊 Dashboard</a>
+
+        <a href="/upload">📂 Upload Data</a>
+
+        <a href="/train">🧠 Train Model</a>
+
+        <a href="/prediction">🔮 Prediction</a>
+
+        <a href="/analytics">📈 Analytics</a>
+
+        <a href="/logout">🚪 Logout</a>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <!-- Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Employees</h3>
+                <h1>{{ total_employees }}</h1>
+            </div>
+
+            <div class="card">
+                <h3>Attrition Rate</h3>
+                <h1>{{ attrition_rate }}%</h1>
+            </div>
+
+            <div class="card">
+                <h3>Departments</h3>
+                <h1>{{ departments }}</h1>
+            </div>
+
+            <div class="card">
+                <h3>Model Accuracy</h3>
+                <h1>{{ "%.2f"|format(model_accuracy) }}%</h1>
+            </div>
+
+        </div>
+
+        <!-- Chart -->
+
+        <div class="chart-container">
+
+            <h2 style="text-align:center;margin-bottom:20px;">
+                Employee Attrition Overview
+            </h2>
+
+            <canvas id="attritionChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const ctx =
+            document.getElementById(
+                'attritionChart'
+            );
+
+        new Chart(ctx, {
+
+            type: 'pie',
+            cutout: '50%',
+
+            data: {
+
+                labels: [
+                    'Stayed',
+                    'Resigned'
+                ],
+
+                datasets: [{
+
+                    data: [88, 12],
+
+                    backgroundColor: [
+                        '#2563eb',
+                        '#ef4444'
+                    ],
+
+                    borderWidth: 2
+
+                }]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+                cutout: '50%',
+
+                plugins: {
+
+                    legend: {
+
+                        position: 'top'
+
+                    }
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

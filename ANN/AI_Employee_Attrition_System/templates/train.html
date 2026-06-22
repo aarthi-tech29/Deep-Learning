@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Train ANN Model</title>
+
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+<a href="/dashboard" class="dashboard-btn">
+    🏠 Back to Dashboard
+</a>
+
+    <div class="form-container">
+
+        <h1>🧠 Train ANN Model</h1>
+
+        <p style="
+            color:#64748b;
+            margin-bottom:20px;
+            font-size:16px;
+        ">
+            Click the button below to train the Employee Attrition Prediction Model.
+        </p>
+
+        <form action="/train_model"
+              method="POST">
+
+            <button type="submit">
+                🚀 Train Model
+            </button>
+
+        </form>
+
+        {% if accuracy %}
+
+        <div class="success-box">
+
+            <h2>✅ Model Trained Successfully</h2>
+
+            <p>
+                Artificial Neural Network training completed.
+            </p>
+
+            <p>
+                Model files generated successfully:
+            </p>
+
+            <ul style="
+                margin-top:10px;
+                margin-left:20px;
+                color:#166534;
+            ">
+                <li>attrition_model.h5</li>
+                <li>scaler.pkl</li>
+                <li>label_encoder.pkl</li>
+            </ul>
+
+            <h3 style="
+                margin-top:15px;
+                color:#14532d;
+            ">
+                Accuracy : {{ accuracy }} %
+            </h3>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

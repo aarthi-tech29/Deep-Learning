@@ -104,13 +104,19 @@ def dashboard():
     except:
 
         model_accuracy = 0
+        
+    stayed = len(df[df["Attrition"] == "No"])
+
+    resigned = len(df[df["Attrition"] == "Yes"])
 
     return render_template(
         "dashboard.html",
         total_employees=total_employees,
         attrition_rate=attrition_rate,
         departments=departments,
-        model_accuracy=model_accuracy
+        model_accuracy=model_accuracy,
+        stayed=stayed,
+        resigned=resigned
     )
 
 
@@ -242,32 +248,34 @@ def predict_employee():
 
         department = request.form["department"]
 
-        department_map = {
-            "Sales": 0,
-            "IT": 1,
-            "HR": 2,
-            "Finance": 3
-        }
-
-        dept_value = department_map[
-            department
-        ]
-
-        model = load_model(
-            "model/attrition_model.h5"
+        # Load Department Encoder
+        department_encoder = joblib.load(
+            "model/label_encoder.pkl"
         )
 
+        dept_value = department_encoder.transform(
+            [department]
+        )[0]
+
+        # Load Scaler
         scaler = joblib.load(
             "model/scaler.pkl"
         )
 
+        # Load Trained Model
+        model = load_model(
+            "model/attrition_model.h5"
+        )
+
         employee = np.array([[
+
             age,
             income,
             satisfaction,
             years,
             performance,
             dept_value
+
         ]])
 
         employee = scaler.transform(
@@ -283,28 +291,39 @@ def predict_employee():
             2
         )
 
-        if probability >= 50:
+        if probability >= 80:
 
-            result = (
-                "Likely To Resign"
-            )
+            risk = "High Risk"
+
+            result = "Likely To Resign"
+
+        elif probability >= 50:
+
+            risk = "Medium Risk"
+
+            result = "Likely To Resign"
 
         else:
 
-            result = (
-                "Not Likely To Resign"
-            )
+            risk = "Low Risk"
+
+            result = "Not Likely To Resign"
 
         return render_template(
+
             "prediction.html",
+
             result=result,
-            probability=probability
+
+            probability=probability,
+
+            risk=risk
+
         )
 
     except Exception as e:
 
         return str(e)
-
 
 # --------------------------------------------------
 # ANALYTICS PAGE
@@ -316,10 +335,52 @@ def analytics():
     if "username" not in session:
         return redirect("/login")
 
-    return render_template(
-        "analytics.html"
+    df = pd.read_csv(
+        "dataset/employee_attrition.csv"
     )
 
+    # Dynamic Department Attrition
+    dept_attrition = (
+        df[df["Attrition"] == "Yes"]
+        .groupby("Department")
+        .size()
+    )
+
+    department_labels = [
+        "IT",
+        "HR",
+        "Sales",
+        "Finance"
+    ]
+
+    department_values = list(map(int, [
+    dept_attrition.get("IT", 0),
+    dept_attrition.get("HR", 0),
+    dept_attrition.get("Sales", 0),
+    dept_attrition.get("Finance", 0)
+        ]))
+
+    # Dynamic Performance Distribution
+    high_perf = len(
+        df[df["PerformanceRating"] >= 4]
+    )
+
+    avg_perf = len(
+        df[df["PerformanceRating"] == 3]
+    )
+
+    low_perf = len(
+        df[df["PerformanceRating"] <= 2]
+    )
+
+    return render_template(
+        "analytics.html",
+        department_labels=department_labels,
+        department_values=department_values,
+        high_perf=high_perf,
+        avg_perf=avg_perf,
+        low_perf=low_perf
+    )
 
 # --------------------------------------------------
 # LOGOUT

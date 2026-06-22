@@ -1,46 +1,52 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
 
+    <title>HR Analytics Dashboard</title>
 
-<title>HR Analytics Dashboard</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 
-
-<link rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}">
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
 <body>
-<a href="/dashboard" class="dashboard-btn">
-    🏠 Back to Dashboard
-</a>
 
-<div class="analytics-page">
+    <a href="/dashboard" class="dashboard-btn">
+        🏠 Back to Dashboard
+    </a>
 
-<h1>📊 HR Analytics Dashboard</h1>
+    <div class="analytics-page">
 
-<div class="chart-box">
+        <h1>📊 HR Analytics Dashboard</h1>
 
-    <canvas id="departmentChart"></canvas>
+        <div class="analytics-wrapper">
 
-</div>
+            <!-- Department Attrition Chart -->
 
-<div class="chart-box">
+            <div class="chart-box">
 
-    <canvas id="performanceChart"></canvas>
+                <canvas id="departmentChart"></canvas>
 
-</div>
-```
+            </div>
 
-</div>
+            <!-- Performance Distribution Chart -->
+
+            <div class="chart-box">
+
+                <canvas id="performanceChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
 
 <script>
+
+// ================= DEPARTMENT ATTRITION =================
 
 const deptCtx =
 document.getElementById(
@@ -53,34 +59,25 @@ new Chart(deptCtx, {
 
     data: {
 
-        labels: [
-            'IT',
-            'HR',
-            'Sales',
-            'Finance'
-        ],
+        labels: {{ department_labels | tojson }},
 
         datasets: [{
 
-            label: 'Attrition',
+            label: 'Attrition Count',
 
-            data: [15, 8, 12, 5],
+            data: {{ department_values | tojson }},
 
             backgroundColor: [
                 '#3B82F6',
                 '#EF4444',
                 '#10B981',
-                '#F59E0B'
+                '#F59E0B',
+                '#8B5CF6',
+                '#EC4899',
+                '#14B8A6'
             ],
 
-            borderColor: [
-                '#2563EB',
-                '#DC2626',
-                '#059669',
-                '#D97706'
-            ],
-
-            borderWidth: 2
+            borderWidth: 1
 
         }]
     },
@@ -107,10 +104,20 @@ new Chart(deptCtx, {
                     size: 18
                 }
             }
+        },
+
+        scales: {
+
+            y: {
+
+                beginAtZero: true
+            }
         }
     }
-
 });
+
+
+// ================= PERFORMANCE DISTRIBUTION =================
 
 const perfCtx =
 document.getElementById(
@@ -119,7 +126,7 @@ document.getElementById(
 
 new Chart(perfCtx, {
 
-    type: 'pie',
+    type: 'doughnut',
 
     data: {
 
@@ -131,13 +138,19 @@ new Chart(perfCtx, {
 
         datasets: [{
 
-            data: [45, 35, 20],
+            data: [
+                {{ high_perf }},
+                {{ avg_perf }},
+                {{ low_perf }}
+            ],
 
             backgroundColor: [
                 '#22C55E',
                 '#F59E0B',
                 '#EF4444'
-            ]
+            ],
+
+            borderWidth: 2
 
         }]
     },
@@ -148,7 +161,14 @@ new Chart(perfCtx, {
 
         maintainAspectRatio: false,
 
+        cutout: '60%',
+
         plugins: {
+
+            legend: {
+
+                position: 'top'
+            },
 
             title: {
 
@@ -162,7 +182,6 @@ new Chart(perfCtx, {
             }
         }
     }
-
 });
 
 </script>

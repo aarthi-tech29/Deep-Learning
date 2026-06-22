@@ -73,6 +73,15 @@ def dashboard():
     df = pd.read_csv(
         "dataset/medical_diagnosis.csv"
     )
+    try:
+        with open("model/accuracy.txt", "r") as f:
+            model_accuracy = float(f.read().strip())
+
+        print("Accuracy File:", model_accuracy)
+
+    except Exception as e:
+        print(e)
+        model_accuracy = 0
 
     total_patients = len(df)
 
@@ -157,9 +166,11 @@ def train():
 @app.route("/train_model", methods=["POST"])
 def train_model():
 
-    os.system(
+    result = os.system(
         "python model/train_model.py"
     )
+
+    print("Train Status:", result)
 
     try:
 

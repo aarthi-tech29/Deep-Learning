@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
-
+import os
 # Load Dataset
 df = pd.read_csv(
     "dataset/medical_diagnosis.csv",

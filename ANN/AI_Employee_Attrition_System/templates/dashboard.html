@@ -78,17 +78,18 @@
 
     </div>
 
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
 
         const ctx =
-            document.getElementById(
-                'attritionChart'
-            );
+        document.getElementById(
+            'attritionChart'
+        );
 
         new Chart(ctx, {
 
-            type: 'pie',
-            cutout: '50%',
+            type: 'doughnut',
 
             data: {
 
@@ -99,14 +100,22 @@
 
                 datasets: [{
 
-                    data: [88, 12],
+                    data: [
+                        {{ stayed }},
+                        {{ resigned }}
+                    ],
 
                     backgroundColor: [
                         '#2563eb',
                         '#ef4444'
                     ],
 
-                    borderWidth: 2
+                    borderColor: [
+                        '#ffffff',
+                        '#ffffff'
+                    ],
+
+                    borderWidth: 3
 
                 }]
 
@@ -117,14 +126,35 @@
                 responsive: true,
 
                 maintainAspectRatio: false,
-                cutout: '50%',
+
+                cutout: '60%',
 
                 plugins: {
 
                     legend: {
 
-                        position: 'top'
+                        position: 'top',
 
+                        labels: {
+
+                            font: {
+                                size: 14
+                            }
+                        }
+
+                    },
+
+                    tooltip: {
+
+                        callbacks: {
+
+                            label: function(context) {
+
+                                return context.label +
+                                    ': ' +
+                                    context.raw;
+                            }
+                        }
                     }
 
                 }
